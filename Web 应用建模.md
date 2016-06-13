@@ -6,7 +6,7 @@ Web 应用建模的特性包括层、方面、阶段和适应性4个方面
 ![](https://github.com/WebHomeWork623/work1/blob/master/Image/0.png)
 
 ##活动图
-![](https://github.com/WebHomeWork623/work1/blob/master/Image/1.png)
+![](https://github.com/WebHomeWork623/work1/blob/master/Image/AG.png)
 
 ##类图
 ![](https://github.com/WebHomeWork623/work1/blob/master/Image/2.png)
