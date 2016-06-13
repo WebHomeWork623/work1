@@ -12,7 +12,7 @@ Web 应用建模的特性包括层、方面、阶段和适应性4个方面
 ![](https://github.com/WebHomeWork623/work1/blob/master/Image/class.png)
 
 ##时序图
-![](https://github.com/WebHomeWork623/work1/blob/master/Image/3.png)
+![](https://github.com/WebHomeWork623/work1/blob/master/Image/sequence.jpg)
 
 ##状态图
 ![](https://github.com/WebHomeWork623/work1/blob/master/Image/state.png)
@@ -23,5 +23,5 @@ Web 应用建模的特性包括层、方面、阶段和适应性4个方面
 
 ##超文本静态建模
 目标是通过Web应用的内容构建导航，因此也是导航建模 
-![](https://github.com/WebHomeWork623/work1/blob/master/Image/6.png)
+![](https://github.com/WebHomeWork623/work1/blob/master/Image/hypertextModel.jpg)
 
