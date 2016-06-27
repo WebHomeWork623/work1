@@ -1,0 +1,115 @@
+Submittion of homework:
+1. personal homework: stu#_task1;
+2. team project: Github repository (每个成员自己的工作自己提交):
+task1:
+	组建项目团队
+	8-10人/队
+	爱好和水平差异组合：优势互补
+	方便沟通
+	Github
+	Register account per student
+	Create a repository per team by team leader
+	Add all team members with read&write access
+	Access git with your  favorite client , i.e., git Bash, smartgit (non-commercial)...
+    注：后续每个分组（团队）提交任务内容都提交至Repository，按照task#组织
+在wikipage的主页上加链接wikipage的方式。如本次任务的内容命名和放置目录结构或者本次任务内容的页面。
+Or
+tasks目录
+
+Task2: 
+	Web项目建议书 – 侧重业务建议(领域、目标) 
+	Introduction
+	Gathering Background Information
+	Components of a Proposal
+	The Executive Summary
+	The Statement of Need
+	The Project Description
+	The Budget
+	Organizational Information
+	Letter Proposal
+	Conclusion
+	ref: http://foundationcenter.org/getstarted/tutorials/shortcourse/index.html
+Task3:
+	Web项目需求文档: 根据本章需求内容，完成项目需求规格说明书
+Task4:
+	Web应用建模
+	根据本章内容，完成Web应用建模
+	展示的主要内容之一
+	8~10 slides
+Task5:
+	Web应用架构设计
+	结合本章内容，完成Web应用架构
+	展示的主要内容之一
+	~2 slides
+	架构报告
+Task6:
+	Web应用设计
+	结合本章内容，完成Web应用设计
+	展示的内容之一
+	~2 slides
+Task7:
+	Web应用构建
+	选择适当的技术，完成Web应用（部分功能）构建。
+	至少有5个页面, 包括主页, 尽量让每个页面有不同点。
+	部分功能要包含架构的各种组件。如：架构中包含数据库，就需要实现访问数据库存储的功能。
+	Web应用部署
+	在Web应用构建过程中，选择适当粒度进行部署。最低要求：上述构建内容部署可用。
+Task8:
+	Web应用测试
+	对构建的Web应用（部分功能）进行测试。
+Task9:
+	Web应用运维
+	内容维护
+	SEO策略分析
+Task10: 
+	组建团队- ref Task1
+	组长——leader
+	计划（一个Sprint）
+	代码review
+		- 组内：相互review
+		- 组间：课代表协调
+		- W1-1 review W1-2, W1-2 review W1-3, ..., W1-N review W1-1
+		- W2-1 review W2-2, W2-2 review W2-3, ..., W2-N review W2-1
+	选派代表进行presentation
+Task11:
+	Web应用性能和可用性分析
+	考虑性能方面的因素，项目中可以采取的策略
+	考虑可用性方面的因素，项目中可以采取的策略
+Task12:
+	为Web应用添加安全性防护策略
+	Spring Security
+	Shiro
+	……
+
+强制提交team tasks：#1 - #8; #4 - #6和展示PPT一起提交。
+Final submition:
+项目文件要在Github上提交，内容包括：
+1.项目有关文件按任务或者项目内容，建Wikipage(在线可查看的格式)；
+2.说明文件和初始化脚本和配置文件（配置开发环境和运行环境说明、打包安装说明）；
+3.测试运行结果；
+4.操作使用说明；
+5.其他自认为必要的说明
+
+Presentation实施：
+2016：
+有关上机：时间 14、16周二晚；18周五晚
+W1：共17组(+1)
+W2：共13组
+注：任选课可以自由组队：和自己行政班限选课的同学一起，或者自己组队。
+实施方式：每个小组15分钟，其中汇报10分钟，问答5分钟
+一、二班的课代表，负责组织W1班的2个机房；按班顺序三、四班的课代表，负责组织W2班的2个机房。
+一个小组讲，其他小组评（评审根据项目进行问答, W#-#-组间评审表.xlsx），每个小组提交对同机房其他小组的评审（意见1～3行即可，有百分制综合评分，需要标识他们的班（W1 or W2）+组号+组长），结束后课代表收齐并汇总(W#-组间评审表-汇总.xlsx)。
+组织实施的内容包括：
+1. 协调两个机房的小组，并进行记录--直接按小组数从中间分；
+2. 控制时间和演讲顺序。
+
+验收：
+演示项目实现情况，由4位课代表进行验收（课代表所在小组由其他四位课代表验收，最先或最后，其他小组课代表协调顺序），打百分制成绩。从以下几个方面进行打分：W#-项目验收表.xlsx
+1. 工作量(页面数量、功能点);
+2. 构建所用技术先进性;
+3. 页面设计(美观、布局、导航等);
+4. 测试(多方面测试);
+5. 可用性、安全等方面的考虑。
+
+组内评价:
+每个小组提交一份组内评审表(W#-#-组内评审表.xlsx)
