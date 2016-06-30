@@ -1,5 +1,5 @@
-# blog博客系统
-* 基于mongoDB + ejs + express
+# N-Blog系统
+* 基于Node.js+MongoDB + ejs + Express
 
 ## 环境配置
 1. 安装Node环境及npm包管理工具
@@ -9,9 +9,7 @@
 ## 使用方式
 1. 进入项目根目录，输入 npm install 安装项目依赖包
 
-2. 启动monggoDB
-
-	进入 /blog/mongod/bin 目录，运行./mongod
+2. 启动mongoDB
 
 3. 启动Express
 
