@@ -1,0 +1,20 @@
+<style>
+  section#tags{
+    box-shadow: 0 0 6px rgba(0,0,0,.3);
+    border-radius: 4px;
+    margin-top: 10px;
+  }
+  .am-btn.am-btn-secondary.am-btn-sm.am-radius {
+    background: rgba(0,200,200,.6);
+  }
+</style>
+<section class="am-panel am-panel-default" id="tags">
+    <div class="am-panel-hd">标签云</div>
+    <div class="am-panel-bd">
+        <div class="am-avg-sm-4 am-btn-group blog-team">
+            <% tags.forEach(function (tag, index) { %>
+            <a class="am-btn am-btn-secondary am-btn-sm am-radius" href="/tags/<%= tag %>"><%= tag %></a>
+            <% }) %>
+        </div>
+    </div>
+</section>

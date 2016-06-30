@@ -1,0 +1,26 @@
+
+<ul class="am-pagination blog-pagination">
+    <% if (keyword) { %>
+    <% if (page != 1) { %>
+    <li class="am-pagination-prev"><a href="?keyword=<%= keyword %>&p=<%= page - 1 %>">&laquo; 上一页</a></li>
+    <% } %>
+    <% if ((page - 1) * 10 + posts.length != total) { %>
+    <li class="am-pagination-next"><a href="?keyword=<%= keyword %>&p=<%= page + 1 %>">下一页 &raquo;</a></li>
+    <% } %>
+    <% } else if (title != "存档") { %>
+    <% if (page != 1) { %>
+    <li class="am-pagination-prev"><a href="?p=<%= page - 1 %>">&laquo; 上一页</a></li>
+    <% } %>
+    <% if ((page - 1) * 10 + posts.length != total) { %>
+    <li class="am-pagination-next"><a href="?p=<%= page + 1 %>">下一页 &raquo;</a></li>
+    <% } %>
+    <% } %>
+    <% if (title == "存档") { %>
+    <% if (page != 1) { %>
+    <li class="am-pagination-prev"><a href="?p=<%= page - 1 %>">&laquo; <%= (new Date().getFullYear()) - page + 2 %></a></li>
+    <% } %>
+    <% if (total != 0) { %>
+    <li class="am-pagination-next"><a href="?p=<%= page + 1 %>"><%= (new Date().getFullYear()) - page %> &raquo;</a></li>
+    <% } %>
+    <% } %>
+</ul>

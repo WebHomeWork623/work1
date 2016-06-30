@@ -1,0 +1,79 @@
+<%- include header %>
+<style>
+    .reg-form {
+        margin-top: 50px;
+    }
+    .reg-page {
+        background: rgba(100,100,100,.8);
+        color: #555;
+    }
+    .myreg-page {
+        margin: 100px auto;
+        background: rgba(250,250,250,.8);
+        border-radius: 10px;
+    }
+    .myreg-page h3 {
+        font-size: 1.2em;
+        text-align: center;
+        padding-top: .6em;
+    }
+
+</style>
+<div class="am-g reg-page" >
+    <div class="am-u-lg-5 am-u-md-7 am-u-sm-centered myreg-page">
+
+        <form action="/reg" class="am-form reg-form" id="doc-vld-msg" method="post">
+            <h3><%- title %> <span class="am-badge am-badge-danger am-text-lg"><%- error %></span></h3>
+            <hr>
+            <fieldset>
+                <div class="am-form-group">
+                    <label for="doc-vld-name-2-1">用户名：</label>
+                    <input  type="text" name="name" id="doc-vld-name-2-1" minlength="3" placeholder="输入用户名（至少 3 个字符）" required/>
+                </div>
+
+                <div class="am-form-group">
+                    <label for="doc-vld-name-2-1">密码：</label>
+                    <input type="password"  name="password" id="doc-vld-password-2-1" minlength="12" maxlength="16" placeholder="输入密码(至少为12位字符)" required/>
+                </div>
+
+                <div class="am-form-group">
+                    <label for="doc-vld-name-2-1">确认密码：</label>
+                    <input type="password"  name="password-repeat" id="doc-vld-password-2-1" minlength="12" maxlength="16" placeholder="重新输入密码" required/>
+                </div>
+
+                <div class="am-form-group">
+                    <label for="doc-vld-email-2-1">邮箱：</label>
+                    <input type="email"  name="email" id="doc-vld-email-2-1" data-validation-message="自定义提示信息：输入地球上的电子邮箱撒" placeholder="输入邮箱" required/>
+                </div>
+
+                <div class="am-form-group">
+                    <label for="doc-vld-age-2-1">年龄：</label>
+                    <input type="number" id="doc-vld-age-2-1" placeholder="输入年龄(12-120)" min="12" max="120" name="age" required />
+                </div>
+
+                <div class="am-form-group">
+                    <label>性别： </label>
+                    <label class="am-radio-inline">
+                        <input type="radio"  value="M" name="gender" required> 男
+                    </label>
+                    <label class="am-radio-inline">
+                        <input type="radio" value="F" name="gender"> 女
+                    </label>
+                    <label class="am-radio-inline">
+                        <input type="radio" value="O" name="gender"> 其他
+                    </label>
+                </div>
+
+                <div class="am-form-group">
+                    <label for="doc-ta-1">个人信息</label>
+                    <textarea class="" rows="2" id="doc-ta-1" maxlength="100" name="message"></textarea>
+                </div>
+
+                <button class="am-btn am-btn-secondary" type="submit">提交</button>
+            </fieldset>
+        </form>
+        <br>
+    </div>
+</div>
+<%- include footer %>
+

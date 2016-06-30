@@ -1,0 +1,32 @@
+<%- include header %>
+<style>
+    .archive-hd {
+        border: none;
+    }
+    .am-list li{
+        padding:.5em;
+    }
+    .am-panel.am-panel-default{
+        box-shadow: 0 0 15px rgba(0,0,0,.3);
+        border-radius: 4px;       
+    }
+    .am-panel-hd.archive-hd {
+        margin-top: 2px;
+    }
+
+</style>
+
+<div class="am-g am-g-fixed content">
+    <div class="am-panel am-panel-default">
+        <div class="am-panel-hd archive-hd"><%= year %></div>
+        <ul class="am-list">
+            <% posts.forEach(function (post, index) { %>
+            <li>
+                <a href="/u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>"><%= post.title %><time class="am-align-right"><%= post.time.day %></time></a>
+            </li>
+            <% }) %>
+        </ul>
+    </div>
+    <%- include paging %>
+</div>
+<%- include footer %>

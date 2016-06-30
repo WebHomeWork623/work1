@@ -1,0 +1,90 @@
+<%- include header %>
+<style>
+    .search-list {
+        padding: 14px;
+    }
+    .am-table.am-table-striped.am-table-hover.table-main {
+        box-shadow: 0 0 6px rgba(0,0,0,.3);
+        border-radius: 4px;
+    }
+    .am-table.am-table-striped.am-table-hover.table-main td {
+        background: #fff;
+        color:blue;
+    }
+
+    
+</style>
+<div class="am-g am-g-fixed blog-g-fixed">
+    <div class="am-u-md-12 content">
+        <% if (user && (user.name == title)) { %>
+        <table class="am-table am-table-striped am-table-hover table-main">
+            <thead>
+            <tr>
+                <th class="table-title">标题</th><th class="table-type">标签</th><th class="table-author am-hide-sm-only">作者</th><th class="table-date am-hide-sm-only">修改日期</th><th class="table-set">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% posts.forEach(function (post, index) { %>
+            <tr>
+                <td><%= index+1 %>. <a href="/u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>"><%= post.title %></a></td>
+                <td>
+                    <% post.tags.forEach(function (tag, index) { %>
+                    <% if (tag) { %>
+                    <a href="/tags/<%= tag %>"><%= tag %></a>
+                    <% } %>
+                    <% }) %>
+                </td>
+                <td class="am-hide-sm-only"><%= post.name %></td>
+                <td class="am-hide-sm-only"><%= post.time.minute %></td>
+                <td>
+                    <div class="am-btn-toolbar">
+                        <div class="am-btn-group am-btn-group-xs">
+                            <a class="am-btn am-btn-default am-btn-xs am-text-secondary" href="/edit/<%= post.name %>/<%= post.time.day %>/<%= post.title %>"><span class="am-icon-pencil-square-o"></span> 编辑</a>
+                            <a class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only" href="/remove/<%= post.name %>/<%= post.time.day %>/<%= post.title %>"><span class="am-icon-trash-o"></span> 删除</a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <% }) %>
+            </tbody>
+        </table>
+        <% } else { %>
+        <% posts.forEach(function (post, index) { %>
+        <article class="am-panel am-panel-secondary search-list">
+            <div class="am-article-meta">
+                <a class="am-article-title" href="/u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>"><%= post.title %></a>
+                <div class="am-align-right">by <a href="/u/<%= post.name %>"><%= post.name %></a> posted on <%= post.time.minute %></div>
+            </div>
+
+            <div class="am-article-meta">
+                <% if (post.tags.length > 0) { %>
+                <span><i class="am-icon-tag"></i>
+                标签：<% post.tags.forEach(function (tag, index) { %>
+                    <% if (tag) { %>
+                    <a href="/tags/<%= tag %>"><%= tag %></a>
+                    <% } %>
+                    <% }) %></span>
+                <% } else { %>
+                <span><i class="am-icon-tag"></i> 标签： 快给它贴上标签吧~</span>
+                <% } %>
+
+                <div class="am-align-right">
+                    <span>阅读：<%= post.pv %></span>
+                    <span>评论：<%= post.comments.length %></span>
+                    <!-- <span>转载：
+                        <% if (post.reprint_info.reprint_to) { %>
+                        <%= post.reprint_info.reprint_to.length %>
+                        <% } else { %>
+                        <%= 0 %>
+                        <% } %>
+                    </span> -->
+                </div>
+            </div>
+        </article>
+        <% }) %>
+        <% } %>
+        <%- include paging %>
+    </div>
+
+</div>
+<%- include footer %>

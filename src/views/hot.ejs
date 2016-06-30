@@ -1,0 +1,18 @@
+<style>
+  section.am-panel{
+    box-shadow: 0 0 6px rgba(0,0,0,.3);
+    border-radius: 4px;
+  }
+
+</style>
+<section class="am-panel am-panel-default">
+    <div class="am-panel-hd">最热文章</div>
+    <ul class="am-list">
+        <% var index = 0 %>
+        <% hots.forEach(function (hot, index) { %>
+        <li>
+            <a href="/u/<%= hot.name %>/<%= hot.time.day %>/<%= hot.title %>"><span><%= index + 1 %> </span><%= hot.title %><span class="am-badge am-badge-success am-align-right">阅读数：<%= hot.pv %></span></a>
+        </li>
+        <% }) %>
+    </ul>
+</section>

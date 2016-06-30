@@ -1,0 +1,28 @@
+<style>
+  .am-panel.am-panel-default.rank {
+    margin-top: 10px;
+  }
+  li span.rankname {
+    background-color: rgb(255,255,20);
+    border-radius: 40%;
+    padding: .2em .4em;
+  }
+  li:nth-child(-n+3) span.rankname {
+    background-color: rgb(233,200,93);
+  }
+  .rank span.am-badge {
+    background-color: rgba(100,100,100,.6);
+  }
+
+</style>
+<section class="am-panel am-panel-default rank">
+    <div class="am-panel-hd">发表排行</div>
+    <ul class="am-list">
+        <% var index = 0 %>
+        <% rank.forEach(function (rank, index) { %>
+        <li>
+            <a href="/u/<%= rank.name %>"><span class="rankname"><%= index + 1 %></span>&nbsp;&nbsp;<%= rank.name %><span class="am-badge am-badge-success am-align-right">发文量：<%= rank.postnum %></span></a>
+        </li>
+        <% }) %>
+    </ul>
+</section>

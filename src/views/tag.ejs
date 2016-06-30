@@ -1,0 +1,46 @@
+<%- include header %>
+<style>
+    .search-list {
+        padding: 14px;
+    }
+</style>
+<div class="am-g am-g-fixed content">
+    <div class="am-u-md-12">
+        <% posts.forEach(function (post, index) { %>
+        <article class="am-panel am-panel-secondary search-list">
+            <div class="am-article-meta">
+                <a class="am-article-title" href="/u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>"><%= post.title %></a>
+                <div class="am-align-right">by <a href="/u/<%= post.name %>"><%= post.name %></a> posted on <%= post.time.minute %></div>
+            </div>
+
+            <div class="am-article-meta">
+                <% if (post.tags.length > 0) { %>
+                <span><i class="am-icon-tag"></i>
+                标签：<% post.tags.forEach(function (tag, index) { %>
+                    <% if (tag) { %>
+                    <a href="/tags/<%= tag %>"><%= tag %></a>
+                    <% } %>
+                    <% }) %></span>
+                <% } else { %>
+                <span><i class="am-icon-tag"></i> 标签： 快给它贴上标签吧~</span>
+                <% } %>
+
+                <div class="am-align-right">
+                    <span>阅读：<%= post.pv %></span>
+                    <span>评论：<%= post.comments.length %></span>
+                    <span>转载：
+                        <% if (post.reprint_info.reprint_to) { %>
+                        <%= post.reprint_info.reprint_to.length %>
+                        <% } else { %>
+                        <%= 0 %>
+                        <% } %>
+                    </span>
+                </div>
+            </div>
+        </article>
+        <% }) %>
+        <%- include paging %>
+    </div>
+
+</div>
+<%- include footer %>

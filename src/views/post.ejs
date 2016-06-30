@@ -1,0 +1,54 @@
+<%- include header %>
+<style>
+    #bg-page {
+        background: rgba(100,100,100,.6);
+    }
+    #doc-vld-msg input {
+        width: 80%;
+        display: inline-block;
+        float: right;
+    }
+    #post-page {
+        background: rgba(255,255,255,.8);
+        margin: 40px auto;
+        border-radius: 20px;
+        box-shadow:  3px 3px 10px #888;
+        color: #666;
+    }
+    .space-page {
+        display: inline-block;
+        width: 2em;
+    }
+    #post-page h3 {
+        color: #999;
+        font-size: 1.2em;
+        text-align: center;
+    } 
+</style>
+<% if (user) { %>
+<div class="am-g" id="bg-page">
+    <div class="am-u-lg-6 am-u-md-8 am-u-sm-centered" id="post-page" >
+        <h3>发布文章</h3>
+        <hr>
+        <form class="am-form" id="doc-vld-msg" method="post">    
+                <div class="am-form-group">
+                    <label for="doc-vld-name-2-1">标<span class="space-page"></span>题：</label>
+                    <input type="text" name="title" maxlength="40" id="doc-vld-name-2-1" required/>
+                </div>
+
+                <div class="am-form-group">
+                    <label for="doc-tag">标<span class="space-page"></span>签：</label>
+                    <input type="text" name="tags" maxlength="45" id="doc-tag" placeholder="多个标签使用『;』分隔"/>
+                </div>
+                <div class="am-form-group ">
+                    <label for="doc-ta-1">正<span class="space-page"></span>文：</label>
+                    <textarea class="" rows="20" placeholder="使用markdown语法" id="doc-ta-1" name="post" required></textarea>
+                </div>
+
+                <button class="am-btn am-btn-secondary" type="submit">发布</button>
+        </form>
+        <br>
+    </div>
+</div>
+<% } %>
+<%- include footer %>

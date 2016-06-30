@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>主页 | WebHomeWork623</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="alternate icon" type="image/gif" href="/icons/favicon.gif">
+    <link rel="stylesheet" href="/stylesheets/amazeui.min.css"/>
+    <style>
+        body{
+            background-image: url(/images/bg4.jpg);
+            background-attachment: fixed;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .am-with-topbar-fixed-top {
+            padding-top: 61px;
+        }
+
+        .footer p {
+            color: #7f8c8d;
+            margin: 0;
+            padding: 15px 0;
+            text-align: center;
+            background: #2d3e50;
+        }
+
+        .content {
+            min-height: 860px;
+        }
+        #username {
+            font-size:1.1em;
+            display: inline-block;
+            padding-left: 1em;    
+            color: #000;
+        }
+        .am-panel.am-panel-default {
+            background-color: transparent;
+        }
+        .am-list li{
+            background-color: rgba(240,240,240,.6);
+        }
+        .am-panel.am-panel-default .am-panel-hd {
+            background-color: rgba(240,240,240,.6);
+        }
+        .am-topbar{
+            background-color: rgba(240,240,240,.8);
+            margin-bottom: 0;
+        }
+        #collapse-head {
+            border-radius: 4px;
+        }
+        #collapse-head li {
+            font-family: "KaiTi","Hiragino Sans GB";
+            font-size: 1.1em;
+            font-weight: bold;
+            text-shadow: 1px 1px 10px #bbb;
+        }
+        #collapse-head .am-dropdown-content {
+            background-color: rgba(240,240,240,.8);
+        }
+        .am-nav-pills > li + li {
+            margin-left: 20px;
+            margin-top: 0;
+        }
+        .am-form-field.am-input-sm {
+            transition: width,1s,ease;
+            border-radius: 3px;
+        }
+        .am-form-field.am-input-sm:focus {
+            width: 250px;
+        }
+        .am-btn.am-btn-default.am-btn-sm {
+            border-radius: 5px;
+            box-shadow: 1px 1px 1px #bbb;
+        }
+        
+    </style>
+</head>
+<body>
+
+<% if (!user) { %>
+<header class="am-topbar">
+    <div class="am-container">
+        <h1 class="am-topbar-brand">
+            <a href="/">WebHomeWork623</a>
+        </h1>
+
+        <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-secondary am-show-sm-only"
+                data-am-collapse="{target: '#collapse-head'}"><span class="am-sr-only">导航切换</span> <span
+                    class="am-icon-bars"></span></button>
+
+        <div class="am-collapse am-topbar-collapse" id="collapse-head">
+            <ul class="am-nav am-nav-pills am-topbar-nav">
+                <li class="am-active"><a href="/"><i class="am-icon-home"></i>首页 </a></li>
+                <li><a href="/archive"><i class="am-icon-archive"></i>文章存档 </a></li>
+                <li><a href="/links"><i class="am-icon-star"></i>推荐博客 </a></li>
+            </ul>
+
+            <div class="am-topbar-right">
+                <a class="am-btn am-btn-secondary am-topbar-btn am-btn-sm" href="/reg"><span class="am-icon-pencil"></span> 注册</a>
+            </div>
+
+            <div class="am-topbar-right">
+                <a class="am-btn am-btn-primary am-topbar-btn am-btn-sm" href="/login"><span class="am-icon-user"></span> 登录</a>
+            </div>
+        </div>
+    </div>
+</header>
+<% } else { %>
+<header class="am-topbar ">
+    <h1 class="am-topbar-brand">
+        <a href="/">WebHomeWork623</a>
+    </h1>
+
+    <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only"
+            data-am-collapse="{target: '#doc-topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span
+                class="am-icon-bars"></span></button>
+
+    <div class="am-collapse am-topbar-collapse" id="collapse-head">
+        <ul class="am-nav am-nav-pills am-topbar-nav">
+            <li class="am-active"><a href="/"><i class="am-icon-home"></i>首页 </a></li>
+            <li><a href="/archive"><i class="am-icon-archive"></i>文章存档 </a></li>
+            <li><a href="/links"><i class="am-icon-star"></i>推荐博客 </a></li>
+            <li class="am-dropdown" data-am-dropdown>
+                <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;"> <i class="am-icon-th-list"></i>菜单 <span class="am-icon-caret-down"></span>
+                </a>
+                <ul class="am-dropdown-content">
+                    <!-- <li class="am-dropdown-header">操作</li> -->
+                    <li><a href="/edit/u">个人中心</a></li>
+                    <li><a href="/post">发布文章</a></li>
+                    <li><a href="/u/<%= user.name %>">我的文章</a></li>
+                    <li><a href="/logout">注销</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <form class="am-topbar-form am-topbar-left am-form-inline am-topbar-right" role="search" method="GET" action="/search">
+            <div class="am-form-group">
+                <input type="text" class="am-form-field am-input-sm" placeholder="搜索文章" name="keyword">
+            </div>
+            <button type="submit" class="am-btn am-btn-default am-btn-sm">搜索</button>
+            &nbsp;&nbsp;<img src="<%=user.head%>" class="am-circle" width="30px" height="30px"> <a id="username" href="/edit/u"><%=user.name%></a>
+        </form>
+        
+    </div>
+</header>
+<% } %>
+
+
